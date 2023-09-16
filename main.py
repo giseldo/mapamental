@@ -15,3 +15,21 @@ graph.edge('Quem é o protagonista?', txt_protagonista)
 graph.edge('Quem é o narrador?', txt_modo)
 st.graphviz_chart(graph)
 
+
+btn_corrigir = st.button("Corrigir automaticamente")
+
+
+if btn_corrigir:
+    st.write("Gabarito")
+    graph = graphviz.Digraph()
+    graph.edge('Sobre a estrutura', "Quem é o protagonista?")
+    graph.edge('Sobre a estrutura', "Quem é o narrador?")
+    graph.edge('Quem é o protagonista?', "a raposa")
+    graph.edge('Quem é o narrador?', "onisciente")
+    st.graphviz_chart(graph)
+    
+    
+    st.write("Nota 10.")
+
+
+
